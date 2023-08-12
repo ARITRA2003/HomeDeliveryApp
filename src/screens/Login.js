@@ -28,7 +28,11 @@ const Login = () => {
     }
   return (
     <>
+    <div className="container mt-3">
+    <h2 className='md-3'>Login </h2>
+    </div>
     <div className="container mt-4">
+                
                 <form onSubmit={handleSubmit}>
                     <div className="mb-3">
                         <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>

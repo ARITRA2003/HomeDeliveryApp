@@ -32,14 +32,14 @@ const Navbar = () => {
                     <div className="collapse navbar-collapse " id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <Link className="nav-link active fs-5" aria-current="page" to="/">Home</Link>
+                                <Link className="nav-link  fs-5" aria-current="page" to="/">Home</Link>
                             </li>
                             {(localStorage.getItem("authtoken"))?   
                             <li className="nav-item">
                                 <Link className="nav-link" to="/myorders">My Orders</Link>
                             </li> : ""}
                             <li className="nav-item">
-                                <Link className="nav-link" to="/">About Us</Link>
+                                <Link className="nav-link" to="/about">About Us</Link>
                             </li>
                         </ul>
                         {

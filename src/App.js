@@ -10,6 +10,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min"
 import Signup from "./screens/Signup";
 import { ContextReducerProvider } from "./ContextReducer/ContextReducerProvider";
 import MyOrders from "./screens/MyOrders";
+import About from "./screens/About";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <Route path='/login' element={<Login/>}/>
       <Route path='/signup' element={<Signup/>}/>
       <Route path='/myorders' element={<MyOrders/>}/>
+      <Route path='/about' element={<About/>}/>
     </Routes>
     </BrowserRouter>
     </ContextReducerProvider>
