@@ -32,7 +32,7 @@ const MyOrders = () => {
             </div>
             <div className='container'>
                 <div className='row'>
-                {orderData !== {} ? Array(orderData).map(data => {
+                {Object.keys(orderData).length > 0 ? Array(orderData).map(data => {
                         return (
                             data.myOrder ?
                                 data.myOrder.slice(0).reverse().map((item) => {
@@ -56,7 +56,7 @@ const MyOrders = () => {
                                                                         <span className='m-1'>{arrayData.size}</span>
                                                                         <span className='m-1'>{data}</span>
                                                                         <div className=' d-inline ms-2 h-100 w-20 fs-5' >
-                                                                            ${arrayData.price}/-
+                                                                        ₹{arrayData.price}/-
                                                                         </div>
                                                                     </div>
                                                                 </div>
