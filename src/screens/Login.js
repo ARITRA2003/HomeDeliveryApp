@@ -6,13 +6,14 @@ const Login = () => {
     let navigate = useNavigate();
     const handleSubmit=async(e)=>{
        e.preventDefault();
-       const response = await fetch("http://localhost:5000/api/user/loginuser", {
+       let  URL =process.env.REACT_APP_API_URL +  "/api/user/loginuser"
+       const response = await fetch(URL, {
         method: "POST", 
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({email:credentials.email,password:credentials.password})
-      });
+       });
       const json = await response.json();
       if(!json.success){
           alert("Enter Valid Credentials");

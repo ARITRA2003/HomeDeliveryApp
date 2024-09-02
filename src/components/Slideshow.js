@@ -1,6 +1,7 @@
 import React from 'react'
-
-
+import BurgerPicture from "../static/BurgerPicture.jpg"
+import PizzaPicture from "../static/PizzaPicture.jpg"
+import PastryPicture from "../static/pastryPicture.jpg"
 
 const Slideshow = () => {
     return (
@@ -8,8 +9,7 @@ const Slideshow = () => {
             <Carousel.Item interval={1000} style={{"maxHeight":"500px"}}>
                 <img
                     className="d-block w-100"
-                    src="https://source.unsplash.com/random/1×1/?burger"
-                    alt="First slide"
+                    src={BurgerPicture}
                     style={{"objectFit":"contain !important"}}
                 />
                 <Carousel.Caption>
@@ -22,7 +22,7 @@ const Slideshow = () => {
             <Carousel.Item interval={500} style={{"maxHeight":"500px"}}>
                 <img
                     className="d-block w-100"
-                    src="https://source.unsplash.com/random/1×1/?pizza"
+                    src={PizzaPicture}
                     alt="Second slide"
                     style={{"objectFit":"contain !important"}}
                 />
@@ -36,7 +36,7 @@ const Slideshow = () => {
             <Carousel.Item style={{"maxHeight":"500px"}}>
                 <img
                     className="d-block w-100"
-                    src="https://source.unsplash.com/random/1×1/?pastry"
+                    src={PastryPicture}
                     alt="Third slide"
                     style={{"objectFit":"contain !important",}}
                 />

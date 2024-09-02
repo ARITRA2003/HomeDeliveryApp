@@ -3,14 +3,18 @@ import Navbar from '../components/Navbar'
 import Foodcard from '../components/Foodcard'
 import Footer from '../components/Footer'
 import Carousel from 'react-bootstrap/Carousel'
+import BurgerPicture from "../static/BurgerPicture.jpg"
+import PizzaPicture from "../static/PizzaPicture.jpg"
+import PastryPicture from "../static/pastryPicture.jpg"
 
 const Home = () => {
-  const [search,setsearch]=useState('');
-  const [foodCategory,setFoodCategory]=useState([]);
-  const [foodItems,setfoodItems]=useState([]);
+  const [search,setsearch] = useState('');
+  const [foodCategory,setFoodCategory] = useState([]);
+  const [foodItems,setFoodItems] = useState([]);
 
   const FoodData=async()=>{
-        let response = await fetch("http://localhost:5000/api/foodData", {
+    let  URL =process.env.REACT_APP_API_URL +  "/api/foodData"
+    let response = await fetch(URL, {
         method: "POST", 
         headers: {
           "Content-Type": "application/json",
@@ -18,16 +22,11 @@ const Home = () => {
       });
       response = await response.json();
       setFoodCategory(response[1]);
-      setfoodItems(response[0]);
+      setFoodItems(response[0]);
   }
   useEffect(()=>{
      FoodData();
   },[])
-
-  const onChange=()=>{
-
-  }
-
   return (
     <div>
       <Navbar/>
@@ -36,7 +35,7 @@ const Home = () => {
             <Carousel.Item interval={1000} style={{"maxHeight":"500px"}}>
                 <img
                     className="d-block w-100"
-                    src="https://source.unsplash.com/random/1×1/?burger"
+                    src={PizzaPicture}
                     alt="First slide"
                     style={{"objectFit":"contain !important"}}
                 />
@@ -50,7 +49,7 @@ const Home = () => {
             <Carousel.Item interval={500} style={{"maxHeight":"500px"}}>
                 <img
                     className="d-block w-100"
-                    src="https://source.unsplash.com/random/1×1/?pizza"
+                    src={BurgerPicture}
                     alt="Second slide"
                     style={{"objectFit":"contain !important"}}
                 />
@@ -63,8 +62,8 @@ const Home = () => {
             </Carousel.Item>
             <Carousel.Item style={{"maxHeight":"500px"}}>
                 <img
-                    className="d-block w-100"
-                    src="https://source.unsplash.com/random/1×1/?pastry"
+                    className="d-blocapplication/jsonk w-100"
+                    src={PastryPicture}
                     alt="Third slide"
                     style={{"objectFit":"contain !important",}}
                 />
@@ -77,16 +76,16 @@ const Home = () => {
             </Carousel.Item>
         </Carousel>
       </div>
-      <div className='container m-2'>
+      <div className='container'>
         {
-           (foodCategory!==[])? 
+           (foodCategory.length > 0)? 
            foodCategory.map((data)=>{
             return(
               <div className='row mb-3'>
               <div key={data._id} className='fs-3 m-3'> {data.CategoryName}</div>
-              <hr/>
+              <hr style={{ borderTop: "2px solid #ccc", margin: "20px 0" }} />
               {
-                (foodItems!==[])? 
+                (foodItems.length > 0)? 
                 foodItems.filter((value)=> (value.CategoryName===data.CategoryName) && (value.name.toLowerCase().includes(search.toLowerCase())))
                  .map((items)=>{
                   return(

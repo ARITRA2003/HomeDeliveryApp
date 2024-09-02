@@ -21,9 +21,8 @@ export default function Cart() {
 
   const handleCheckOut = async () => {
     let userEmail = localStorage.getItem("usermail");
-    let response = await fetch("http://localhost:5000/api/auth/AllOrderData", {
-      // credentials: 'include',http://localhost:5000/api/auth/getAllOrderData
-      // Origin:"http://localhost:3000/login",
+    let  URL =process.env.REACT_APP_API_URL +  "/api/auth/AllOrderData"
+    let response = await fetch(URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -42,7 +41,7 @@ export default function Cart() {
   }
 
   let totalPrice = data.reduce((total, food) => total + food.price, 0)
-  
+  order_date: new Date().toDateString()
   return (
     <div>
 
