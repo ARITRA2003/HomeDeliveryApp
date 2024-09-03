@@ -4,8 +4,17 @@ import userRouter from "./Routes/UserCreate.js"
 import FoodRouter from "./Routes/DisplayData.js"
 import MycartRouter from "./Routes/UserOrder.js"
 import cors from "cors";
+import dotenv from "dotenv"
+
+dotenv.config();
+
+
 const app = Express();
-const port = 5000;
+
+const port = process.env.PORT || 27019;
+
+// console.log( process.env.MONGODB_URI);
+
 const databasename = "FoodDelivery";
 //Connecting app to the DataBase
 connecToMongo();
