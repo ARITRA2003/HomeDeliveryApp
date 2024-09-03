@@ -21,7 +21,7 @@ export default function Cart() {
 
   const handleCheckOut = async () => {
     let userEmail = localStorage.getItem("usermail");
-    let  URL =process.env.REACT_APP_API_URL +  "/api/auth/AllOrderData"
+    let  URL =process.env.REACT_APP_API_URL +  "api/auth/AllOrderData"
     let response = await fetch(URL, {
       method: 'POST',
       headers: {

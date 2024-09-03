@@ -13,7 +13,7 @@ const Home = () => {
   const [foodItems,setFoodItems] = useState([]);
 
   const FoodData=async()=>{
-    let  URL =process.env.REACT_APP_API_URL +  "/api/foodData"
+    let  URL =process.env.REACT_APP_API_URL +  "api/foodData"
     let response = await fetch(URL, {
         method: "POST", 
         headers: {

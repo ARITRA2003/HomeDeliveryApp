@@ -4,7 +4,7 @@ import Footer from '../components/Footer'
 
 const MyOrders = () => {
     const [orderData, setorderData] = useState({})
-    let  URL =process.env.REACT_APP_API_URL +  "/api/auth/getAllOrderData"
+    let  URL = process.env.REACT_APP_API_URL +  "api/auth/getAllOrderData"
     const fetchMyOrder = async () => {
 
         const response = await fetch(URL, {

@@ -6,14 +6,29 @@ const About = () => {
     return (
         <div>
             <Navbar />
-            <div className="container mt-3" style={{fontSize: "20px",}}>
-                <h2 className='md-2 '> About us</h2>
-                Since its initiation in 2011, Organization Name has turned into US driving inventory network administrators organization. Our vision is to wind up the working framework for business in the US, through a blend of world-class foundation, coordinations activities of the most noteworthy quality, and front-line designing and innovation capacities.
-                Our group has effectively satisfied more than 340 million requests to in excess of 50 million families crosswise over the US.
-                19 robotized sort focuses, 30 satisfaction focuses, 44 center points, 2500+ direct conveyance focuses, 5000+ accomplice focuses, 14000+ vehicles, and 21000+ colleagues 
+            <div className="container mt-5 mb-5 p-4 bg-light shadow-sm rounded">
+                <h2 className="mb-4 text-primary text-center">About Us</h2>
+                <p className="lead" style={{ fontSize: "1.25rem", lineHeight: "1.75" }}>
+                    Since its initiation in 2011, <strong>Organization Name</strong> has become a leading supply chain management company in the US. Our vision is to transform into the operational backbone of business in the US, through a combination of world-class infrastructure, high-quality logistics operations, and cutting-edge engineering and technology capabilities.
+                </p>
+                <p className="lead" style={{ fontSize: "1.25rem", lineHeight: "1.75" }}>
+                    Our team has successfully fulfilled over 340 million orders to more than 50 million households across the US.
+                </p>
+                <div className="mt-4">
+                    <ul className="list-unstyled">
+                        <li><strong>19</strong> Automated Sort Centers</li>
+                        <li><strong>30</strong> Fulfillment Centers</li>
+                        <li><strong>44</strong> Hubs</li>
+                        <li><strong>2500+</strong> Direct Delivery Centers</li>
+                        <li><strong>5000+</strong> Partner Centers</li>
+                        <li><strong>14000+</strong> Vehicles</li>
+                        <li><strong>21000+</strong> Team Members</li>
+                    </ul>
+                </div>
             </div>
             <Footer />
         </div>
+
     )
 }
 

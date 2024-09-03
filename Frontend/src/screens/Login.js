@@ -6,7 +6,7 @@ const Login = () => {
     let navigate = useNavigate();
     const handleSubmit=async(e)=>{
        e.preventDefault();
-       let  URL =process.env.REACT_APP_API_URL +  "/api/user/loginuser"
+       let  URL =process.env.REACT_APP_API_URL +  "api/user/loginuser"
        const response = await fetch(URL, {
         method: "POST", 
         headers: {
