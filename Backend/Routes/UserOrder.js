@@ -50,7 +50,7 @@ router.post("/AllOrderData",async(req,res)=>{
 router.post("/getAllOrderData",async(req,res)=>{
    try{
       let data=await foodorder.findOne({'email':req.body.email}).exec();
-      console.log(data);
+      // console.log(data);
       if(data===null) res.json({data:{}});
       else res.json({data:data});
    }

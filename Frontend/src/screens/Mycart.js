@@ -41,7 +41,6 @@ export default function Cart() {
   }
 
   let totalPrice = data.reduce((total, food) => total + food.price, 0)
-  order_date: new Date().toDateString()
   return (
     <div>
 
