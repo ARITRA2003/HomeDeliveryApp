@@ -19,24 +19,8 @@ const databasename = "FoodDelivery";
 //Connecting app to the DataBase
 connecToMongo();
 
-const fetchFoodItems=async(client) => {
-    const connect = client.db(databasename);
-    // Connect to collection
-    const collection =await connect.collection("Food_items");
-  
-    await collection.find({}).toArray().then((ans) => {
-        console.log(ans);
-    });
-}
-
-// CORS configuration
-const corsOptions = {
-  origin: ['https://food-delivery-app-euqf-git-emailver-5de8ec-aritra-sens-projects.vercel.app/'], // Allow your frontend's domain
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
-  credentials: true, // Allow credentials (cookies, authorization headers, etc.)
-};
-
-app.use(cors(corsOptions)); // Enable CORS with the specified options
+//We can use json files
+app.use(cors());
 
 app.use(Express.json());
 //Adding Usercreate 
