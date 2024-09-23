@@ -19,8 +19,7 @@ const Navbar = () => {
     const loadCart = () => {
         setCartView(true)
     }
-    let data = useCart();
-    const items = useCart();
+    const data = useCart();
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-success">
@@ -68,6 +67,7 @@ const Navbar = () => {
                     </div>
                 </div>
             </nav>
+            <br></br>
         </div>
     )
 }
