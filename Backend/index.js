@@ -19,8 +19,14 @@ const databasename = "FoodDelivery";
 //Connecting app to the DataBase
 connecToMongo();
 
-//We can use json files
-app.use(cors());
+const corsOptions = {
+  origin: ["https://food-delivery-app-euqf-git-emailver-5de8ec-aritra-sens-projects.vercel.app"], // Replace with your allowed origins
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allowed HTTP methods
+  allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
+  credentials: true, // Allow cookies to be sent with requests
+};
+
+app.use(cors(corsOptions)); 
 
 app.use(Express.json());
 //Adding Usercreate 
