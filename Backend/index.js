@@ -29,7 +29,9 @@ const fetchFoodItems=async(client) => {
     });
 }
 //We can use json files
-app.use(cors());
+app.use(cors(
+  
+));
 app.use(Express.json());
 //Adding Usercreate 
 app.use("/api/user",userRouter);
