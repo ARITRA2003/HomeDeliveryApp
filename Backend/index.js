@@ -28,10 +28,16 @@ const fetchFoodItems=async(client) => {
         console.log(ans);
     });
 }
-//We can use json files
-app.use(cors(
-  
-));
+
+// CORS configuration
+const corsOptions = {
+  origin: ['https://food-delivery-app-euqf-git-emailver-5de8ec-aritra-sens-projects.vercel.app/'], // Allow your frontend's domain
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
+  credentials: true, // Allow credentials (cookies, authorization headers, etc.)
+};
+
+app.use(cors(corsOptions)); // Enable CORS with the specified options
+
 app.use(Express.json());
 //Adding Usercreate 
 app.use("/api/user",userRouter);
