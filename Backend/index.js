@@ -20,7 +20,7 @@ const databasename = "FoodDelivery";
 connecToMongo();
 
 const corsOptions = {
-  origin: ["https://food-delivery-app-euqf-git-emailver-5de8ec-aritra-sens-projects.vercel.app"], // Replace with your allowed origins
+  origin: ["https://food-delivery-app-xkle.vercel.app"], // Replace with your allowed origins
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allowed HTTP methods
   allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
   credentials: true, // Allow cookies to be sent with requests
