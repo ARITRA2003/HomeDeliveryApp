@@ -5,7 +5,7 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 const router = Express.Router();
 
-const SECRET="nodnnoden";
+const SECRET=process.env.JWT_SECRET;
 //Creating a user
 router.post("/createuser",
 [
@@ -31,12 +31,12 @@ async(req,res)=>{
         })
       }
       let salt =await bcrypt.genSaltSync(10);
-      let secpassword =await bcrypt.hashSync(password, salt);
+      let securedPassword =await bcrypt.hashSync(password, salt);
       //If User does not exist,create in DataBase
       user=await User.create({
           name:name,
           location:location,
-          password:secpassword,
+          password:securedPassword,
           email:email
       });
       const data={
