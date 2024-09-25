@@ -8,7 +8,6 @@ import dotenv from "dotenv"
 
 dotenv.config();
 
-
 const app = Express();
 
 const port = process.env.PORT || 27019;
@@ -20,13 +19,18 @@ const databasename = "FoodDelivery";
 connecToMongo();
 
 const corsOptions = {
-  origin: ["https://food-delivery-app-xkle-18atk312g-aritra-sens-projects.vercel.app"], // Replace with your allowed origins
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allowed HTTP methods
-  allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
-  credentials: true, // Allow cookies to be sent with requests
+  origin: [
+    "https://food-delivery-app-xkle.vercel.app",
+    "https://food-delivery-app-xkle-18atk312g-aritra-sens-projects.vercel.app"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
 };
 
+
 app.use(cors(corsOptions)); 
+// app.use(cors());
 
 app.use(Express.json());
 //Adding Usercreate 
