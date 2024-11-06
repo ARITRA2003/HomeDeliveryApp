@@ -5,8 +5,10 @@ node_modules
 /.pnp
 .pnp.js
 
+Frontend/.env
+Backend/.env
+
 pass.txt
-.env
 # testing
 /coverage
 
