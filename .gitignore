@@ -5,9 +5,8 @@ node_modules
 /.pnp
 .pnp.js
 
-frontend/.env
-backend/.env
-.env
+Frontend/.env
+Backend/.env
 
 pass.txt
 # testing
