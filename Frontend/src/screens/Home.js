@@ -5,14 +5,14 @@ import Footer from '../components/Footer'
 import Slideshow from '../components/Slideshow'
 
 const Home = () => {
-  const [search, setsearch] = useState('');
+  const [search, setSearch] = useState('');
   const [foodCategory, setFoodCategory] = useState([]);
   const [foodItems, setFoodItems] = useState([]);
   const [error, setError] = useState(null);
 
-  const FoodData = async () => {
+  const fetchFoodData = async () => {
     try {
-      let URL = `${process.env.REACT_APP_API_URL}api/foodData`
+      const URL = `${process.env.REACT_APP_API_URL}api/foodData`
       let response = await fetch(URL, {
         method: "POST",
         headers: {
@@ -32,12 +32,14 @@ const Home = () => {
   }
 
   useEffect(() => {
-    FoodData();
-  }, [])
+    fetchFoodData();
+  },
+    // eslint-disable-next-line 
+    [])
   return (
     <div>
       <Navbar />
-      <Slideshow setsearch={setsearch} search={search} />
+      <Slideshow setsearch={setSearch} search={search} />
       <div className='container'>
         {error && (
           <div className="alert alert-danger" role="alert" style={{ margin: "20px" }}>

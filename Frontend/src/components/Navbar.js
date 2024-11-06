@@ -8,7 +8,7 @@ import Modal from '../Modal';
 const Navbar = () => {
     
     const [cartView, setCartView] = useState(false)
-    localStorage.setItem('temp', "first")
+    // localStorage.setItem('temp', "first")
 
     const navigate=useNavigate();
     const handleClick=()=>{
@@ -17,7 +17,7 @@ const Navbar = () => {
     }
 
     const loadCart = () => {
-        setCartView(true)
+        setCartView(true);
     }
     const data = useCart();
     return (

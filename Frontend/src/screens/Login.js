@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  const [credentials, setcredentials] = useState({ email: "", password: "" });
+  const [credentials, setCredentials] = useState({ email: "", password: "" });
   let navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let URL = process.env.REACT_APP_API_URL + "api/user/loginuser"
+    const URL = `${process.env.REACT_APP_API_URL}api/user/loginuser`;
     const response = await fetch(URL, {
       method: "POST",
       headers: {
@@ -25,7 +25,7 @@ const Login = () => {
     }
   }
   const onChange = (event) => {
-    setcredentials({ ...credentials, [event.target.name]: event.target.value });
+    setCredentials({ ...credentials, [event.target.name]: event.target.value });
   }
   return (
     <>
