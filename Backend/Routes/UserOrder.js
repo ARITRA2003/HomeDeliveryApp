@@ -83,11 +83,11 @@ router.post('/createCheckoutSession', async (req, res) => {
          ],
          mode: 'payment',
          success_url: process.env.NODE_ENV === 'production'
-            ? "https://food-delivery-app-xkle-18atk312g-aritra-sens-projects.vercel.app"
+            ? process.env.PRODUCTION_URL_DOMAIN
             : "http://localhost:3000", // Your success redirect URL
 
          cancel_url: process.env.NODE_ENV === 'production'
-            ? "https://food-delivery-app-xkle-18atk312g-aritra-sens-projects.vercel.app"
+            ? process.env.PRODUCTION_URL_DOMAIN
             : "http://localhost:3000", // Your cancel redirect URL
       });
 

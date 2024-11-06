@@ -20,8 +20,8 @@ const corsOptions = {
   origin: 
     process.env.NODE_ENV === 'production'?
     [
-      "https://food-delivery-app-xkle.vercel.app",
-      "https://food-delivery-app-xkle-18atk312g-aritra-sens-projects.vercel.app"
+      process.env.PRODUCTION_URL_DOMAIN,
+      process.env.PRODUCTION_URL_DEPLOYMENT
     ] :
     ["http://localhost:3000"],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
